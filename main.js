@@ -3,7 +3,7 @@ import { DiscordSDK } from "Drip-Shoot-Embed/embedded-app-sdk";
 import rocketLogo from '/rocket.png';
 import "./style.css";
 
-// Will eventually store the authenticated user's access_token
+// Will eventually store the authenticated user's access_toke
 let auth;
 
 const discordSdk = new DiscordSDK(import.meta.env.VITE_DISCORD_CLIENT_ID);
