@@ -1,0 +1,20 @@
+{
+  "extends": "./tsconfig-base.json",
+  "files": [],
+  "include": [],
+  "references": [
+    // lib
+    {"path": "."},
+    // iframe-playground
+    {"path": "./examples/iframe-playground/packages/client"},
+    {"path": "./examples/iframe-playground/packages/server"},
+    // activity-starter
+    {"path": "./examples/discord-embedded-app-starter/packages/client"},
+    {"path": "./examples/discord-embedded-app-starter/packages/server"}
+    // nested-messages
+    // {"path": "./examples/nested-messages"}
+    // react-colyseus
+    // {"path": "./examples/react-colyseus/packages/client"},
+    // {"path": "./examples/react-colyseus/packages/server"}
+  ]
+}
