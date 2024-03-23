@@ -1,7 +1,7 @@
 import { DiscordSDK } from "/Drip-Shoot-Embed/embedded-app-sdk";
 
-import rocketLogo from '/rocket.png';
-import "./style.css";
+import rocketLogo from '/Drip-Shoot-Embed/rocket.png';
+import "/Drip-Shoot-Embed/style.css";
 
 // Will eventually store the authenticated user's access_toke
 let auth;
