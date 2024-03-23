@@ -1,26 +1,19 @@
 <!DOCTYPE html>
 <html lang="en-us">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | Drip Shoot Shot</title>
-    <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <link rel="stylesheet" href="TemplateData/style.css">
+    <title>Unity WebGL Player | Activities Testing</title>
 </head>
-<body>
-    <div id="unity-container" class="unity-desktop">
-        <canvas id="unity-canvas" tabindex="-1"></canvas>
-        <div id="unity-loading-bar">
-            <div id="unity-logo"></div>
-            <div id="unity-progress-bar-empty">
-                <div id="unity-progress-bar-full"></div>
-            </div>
-        </div>
-        <div id="unity-warning"> </div>
-        <div id="unity-footer">
-            <div id="unity-webgl-logo"></div>
-            <div id="unity-build-title">Drip Shoot Shot</div>
-        </div>
+
+<body style="text-align: center; padding: 0; border: 0; margin: 0;">
+    <div id="app"></div>
+    <script type="module" src="/main.js"></script>
+
+    <canvas id="unity-canvas" tabindex="-1"
+            style="background: #231F20; width: 100vw; height: 100vh; position: absolute; left: 50%; right: 50%; transform: translate(-50%, 0%);"></canvas>
+    <script src="Build/1.loader.js"></script>
     </div>
     <script>
 
