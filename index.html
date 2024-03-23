@@ -29,7 +29,7 @@
         var canvas = document.querySelector("#unity-canvas");
         var loadingBar = document.querySelector("#unity-loading-bar");
         var progressBarFull = document.querySelector("#unity-progress-bar-full");
-        var fullscreenButton = document.querySelector("#unity-fullscreen-button");
+     //   var fullscreenButton = document.querySelector("#unity-fullscreen-button");
         var warningBanner = document.querySelector("#unity-warning");
         function getURLParameter(name) {
             return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [null, ''])[1].replace(/\+/g, '%20')) || null;
@@ -119,9 +119,9 @@
             }).then((unityInstance) => {
                 unityInstance2 = unityInstance;
                 loadingBar.style.display = "none";
-                fullscreenButton.onclick = () => {
-                    unityInstance.SetFullscreen(1);
-                };
+            //    fullscreenButton.onclick = () => {
+               //     unityInstance.SetFullscreen(1);
+             //   };
                 var encryptedData = getURLParameter('data');
                 unityInstance.SendMessage('Data', 'ReceiveEncryptedData', encryptedData);
             }).catch((message) => {
