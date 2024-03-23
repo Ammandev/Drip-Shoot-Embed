@@ -4,24 +4,16 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity WebGL Player | Drip Shoot Shot</title>
-    <script>
-        // Function to get URL parameters
-        function getURLParameter(name) {
-            return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [null, ''])[1].replace(/\+/g, '%20')) || null;
-        }
-    </script>
 </head>
-<body style="margin: 0; overflow: hidden;">
-    <canvas id="unity-canvas"></canvas>
-    <script src="Build/1.loader.js"></script>
+<body style="text-align: center">
+    <canvas id="unity-canvas" width=960 height=600 tabindex="-1" style="width: 960px; height: 600px; background: #231F20"></canvas>
+    <script src="Build/Build.loader.js"></script>
     <script>
         if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-            document.querySelector("#unity-canvas").style.width = "100%";
-            document.querySelector("#unity-canvas").style.height = "100%";
-            document.querySelector("#unity-canvas").style.position = "absolute";
+            // Mobile device style: fill the whole browser client area with the game canvas:
             var meta = document.createElement('meta');
             meta.name = 'viewport';
-            meta.content = 'width=device-width, initial-scale=1.0, user-scalable=no';
+            meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
             document.getElementsByTagName('head')[0].appendChild(meta);
         }
 
@@ -32,12 +24,9 @@
             streamingAssetsUrl: "StreamingAssets",
             companyName: "Toli",
             productName: "Drip Shoot Shot",
-            productVersion: "1.0.0",
-        }).then(function (unityInstance) {
-            var encryptedData = getURLParameter('data');
-            unityInstance.SendMessage('Data', 'ReceiveEncryptedData', encryptedData);
-        }).catch(function (error) {
-            console.error("Unity Load Error:", error);
+            productVersion: "1.0",
+            // matchWebGLToCanvasSize: false, // Uncomment this to separately control WebGL canvas render size and DOM element size.
+            // devicePixelRatio: 1, // Uncomment this to override low DPI rendering on high DPI displays.
         });
     </script>
 </body>
