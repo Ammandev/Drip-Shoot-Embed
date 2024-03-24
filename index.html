@@ -75,7 +75,19 @@
         // happening inside the engine, and you would instead like to size up
         // the canvas DOM size and WebGL render target sizes yourself.
         // config.matchWebGLToCanvasSize = false;
-
+        function resizeCanvas() {
+            if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+                // For mobile devices, you might want to keep it full screen
+                canvas.style.width = window.innerWidth + 'px';
+                canvas.style.height = window.innerHeight + 'px';
+            } else {
+                // For desktop, adjust the size based on the window size or maintain an aspect ratio
+                canvas.style.width = window.innerWidth + 'px';
+                canvas.style.height = window.innerHeight + 'px';
+            }
+            // If your game uses 'config.matchWebGLToCanvasSize', set it accordingly
+            // For example, if you keep it true, Unity will handle the resizing based on the canvas element's size
+        }
         if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
             // Mobile device style: fill the whole browser client area with the game canvas:
             var meta = document.createElement('meta');
@@ -104,11 +116,13 @@
                 loadingBar.style.display = "none";
                 var encryptedData = getURLParameter('data');
                 unityInstance.SendMessage('Data', 'ReceiveEncryptedData', encryptedData);
-            }).catch((message) => {
+                resizeCanvas();
+    }).catch((message) => {
                 alert(message);
             });
         };
         document.body.appendChild(script);
+        window.addEventListener('resize', resizeCanvas);
     </script>
 </body>
 </html>
