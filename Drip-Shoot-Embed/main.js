@@ -1,4 +1,4 @@
-import { DiscordSDK } from "/Drip-Shoot-Embed/embedded-app-sdk";
+import { DiscordSDK } from "/Drip-Shoot-Embed/node_modules";
 
 import rocketLogo from '/Drip-Shoot-Embed/rocket.png';
 import "/Drip-Shoot-Embed/style.css";
